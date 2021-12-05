@@ -22,3 +22,8 @@
 
 
 ### It calls detect function every 100 milliseconds
+
+
+## screenshot of working application
+
+![alt text](https://github.com/gauravsangwan/face-mesh-tensorflowjs/blob/master/facemesh.png?raw=true)
