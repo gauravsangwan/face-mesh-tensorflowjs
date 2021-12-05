@@ -1,8 +1,12 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
-// Install dependencies
+// Install dependencies-done
 // import dependencies
+import * as tf from "@tensorflow/tfjs";
+import * as facemesh from "@tensorflow-models/facemesh";
+import Webcam from 'react-webcam';
+
 // setup webcam and canvas
 // define refrences to those
 // load facemesh

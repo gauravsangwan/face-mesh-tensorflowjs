@@ -1,7 +1,7 @@
 ## steps
 
-- Install dependencies
-- import dependencies
+- Install dependencies - Done
+- import dependencies - Done
 - setup webcam and canvas
 - define refrences to those
 - load facemesh
