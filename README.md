@@ -2,7 +2,7 @@
 
 - Install dependencies - Done
 - import dependencies - Done
-- setup webcam and canvas
+- setup webcam and canvas - Done
 - define refrences to those
 - load facemesh
 - detect function

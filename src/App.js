@@ -1,13 +1,14 @@
+import React, { useRef, useEffect }  from "react";
 //import logo from './logo.svg';
 import './App.css';
 
 // Install dependencies-done
-// import dependencies
+// import dependencies - done
 import * as tf from "@tensorflow/tfjs";
 import * as facemesh from "@tensorflow-models/facemesh";
 import Webcam from 'react-webcam';
 
-// setup webcam and canvas
+
 // define refrences to those
 // load facemesh
 // detect function
@@ -18,21 +19,41 @@ import Webcam from 'react-webcam';
 // add drawMesh to detect  function
 
 function App() {
+  // setup webcam and canvas
+  const webcamRef = useRef(null);
+  const canvasRef = useRef(null);
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <h1 >Face-Mesh tensorflowJS | Gaurav Sangwan</h1>
+      <header classname="App-header">
+      <Webcam ref={webcamRef} style = {{
+        position: "absolute",
+        marginTop: "50px",
+        marginLeft:"auto",
+        marginRight:"auto",
+        left:0,
+        right:0,
+        textAlign:"center",
+        zIndex:9,
+        width:640,
+        height:480
+      }} />
+      <canvas ref={canvasRef} style = {{
+        position: "absolute",
+        marginTop: "50px",
+        marginLeft:"auto",
+        marginRight:"auto",
+        left:0,
+        right:0,
+        textAlign:"center",
+        zIndex:9,
+        width:640,
+        height:480
+      }} />
       </header>
     </div>
   );
