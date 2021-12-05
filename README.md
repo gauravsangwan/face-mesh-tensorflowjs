@@ -16,3 +16,6 @@
 - setup triangle path
 - setup point drawing
 - add drawMesh to detect  function
+
+
+### It calls detect function every 100 milliseconds
