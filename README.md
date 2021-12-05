@@ -12,6 +12,9 @@
     - make detections
     - get canvas context for drawing
 - drawing utilities
+    - Triangulation matrix - done
+    - draw traingle
+    - draw points
 - load triangulation
 - setup triangle path
 - setup point drawing
