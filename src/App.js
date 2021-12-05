@@ -9,8 +9,7 @@ import * as facemesh from "@tensorflow-models/facemesh";
 import Webcam from 'react-webcam';
 
 
-// define refrences to those
-// load facemesh
+// define refrences to those-Done
 // detect function
 // drawing utilities
 // load triangulation
@@ -23,6 +22,12 @@ function App() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
+  // load facemesh-Done
+  const runFacemesh = async() =>{
+    const net = await facemesh.load({
+      inputResolution:{width:640,height:480},scale:0.8
+    })
+  }
 
 
 
@@ -30,30 +35,34 @@ function App() {
     <div className="App">
       <h1 >Face-Mesh tensorflowJS | Gaurav Sangwan</h1>
       <header classname="App-header">
-      <Webcam ref={webcamRef} style = {{
-        position: "absolute",
-        marginTop: "50px",
-        marginLeft:"auto",
-        marginRight:"auto",
-        left:0,
-        right:0,
-        textAlign:"center",
-        zIndex:9,
-        width:640,
-        height:480
-      }} />
-      <canvas ref={canvasRef} style = {{
-        position: "absolute",
-        marginTop: "50px",
-        marginLeft:"auto",
-        marginRight:"auto",
-        left:0,
-        right:0,
-        textAlign:"center",
-        zIndex:9,
-        width:640,
-        height:480
-      }} />
+      <Webcam 
+        ref={webcamRef} 
+        style = {{
+                  position: "absolute",
+                  marginTop: "50px",
+                  marginLeft:"auto",
+                  marginRight:"auto",
+                  left:0,
+                  right:0,
+                  textAlign:"center",
+                  zIndex:9,
+                  width:640,
+                  height:480
+                }} />
+      <canvas 
+        ref={canvasRef} 
+        style = {{
+                  position: "absolute",
+                  marginTop: "50px",
+                  marginLeft:"auto",
+                  marginRight:"auto",
+                  left:0,
+                  right:0,
+                  textAlign:"center",
+                  zIndex:9,
+                  width:640,
+                  height:480
+                }} />
       </header>
     </div>
   );
