@@ -15,10 +15,10 @@
     - Triangulation matrix - done
     - draw traingle
     - draw points
-- load triangulation
-- setup triangle path
-- setup point drawing
-- add drawMesh to detect  function
+- load triangulation-done
+- setup triangle path-done
+- setup point drawing-done
+- add drawMesh to detect  function-done
 
 
 ### It calls detect function every 100 milliseconds

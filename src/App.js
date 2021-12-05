@@ -29,7 +29,7 @@ function App() {
     });
     setInterval(()=>{
       detect(net)
-    }, 100) // every 100 milliseecond 
+    }, 100) // every 10 milliseecond 
   };
 
   // detect function - DOne
