@@ -10,7 +10,7 @@ import Webcam from 'react-webcam';
 
 
 // define refrences to those-Done
-// detect function
+
 // drawing utilities
 // load triangulation
 // setup triangle path
@@ -26,15 +26,46 @@ function App() {
   const runFacemesh = async() =>{
     const net = await facemesh.load({
       inputResolution:{width:640,height:480},scale:0.8
-    })
-  }
+    });
+    setInterval(()=>{
+      detect(net)
+    }, 100) // every 100 milliseecond 
+  };
+
+  // detect function - DOne
+  const detect = async(net) =>{
+    if(
+      typeof webcamRef.current !=="undefined" && 
+      webcamRef.current !==null && 
+      webcamRef.current.video.readyState === 4
+    ){
+        //get video properties
+        const video = webcamRef.current.video;
+        const videoWidth = webcamRef.current.video.videoWidth;
+        const videoHeight = webcamRef.current.video.videoHeight;
+
+        //set video width
+        webcamRef.current.video.width = videoWidth;
+        webcamRef.current.video.height = videoHeight;
+
+        //set canvas width
+        canvasRef.current.width = videoWidth;
+        canvasRef.current.height = videoHeight;
+
+        //make detections
+        const face = await net.estimateFaces(video);
+        console.log(face);
+
+        //get canvas context for drawing
+      }
+  };
 
 
-
+  runFacemesh();
   return (
     <div className="App">
-      <h1 >Face-Mesh tensorflowJS | Gaurav Sangwan</h1>
-      <header classname="App-header">
+      <h1>Face-Mesh tensorflowJS | Gaurav Sangwan</h1>
+      <header className="App-header">
       <Webcam 
         ref={webcamRef} 
         style = {{
